@@ -1,14 +1,12 @@
-import { useEffect, useState } from 'react';
-
-import { SideBar } from './components/SideBar';
-import { Content } from './components/Content';
-
-import { api } from './services/api';
-
-import './styles/global.scss';
-
-import './styles/sidebar.scss';
 import './styles/content.scss';
+import './styles/global.scss';
+import './styles/sidebar.scss';
+
+import { memo, useEffect, useState } from 'react';
+
+import { Content } from './components/Content';
+import { SideBar } from './components/SideBar';
+import { api } from './services/api';
 
 interface GenreResponseProps {
   id: number;
@@ -62,7 +60,6 @@ export function App() {
         selectedGenreId={selectedGenreId}
         buttonClickCallback={handleClickButton}
       />
-
       <Content
         selectedGenre={selectedGenre}
         movies={movies}
